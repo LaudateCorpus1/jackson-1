@@ -50,7 +50,7 @@
     <property name="IMPL_TITLE_SMILE" value="Jackson Binary format (aka Smile) handling functionality" />
     <property name="IMPL_TITLE_MRBEAN" value="Jackson Bean Materializer (aka Mr. Bean)" />
 
-    <property name="IMPL_VERSION" value="1.9.14" />
+    <property name="IMPL_VERSION" value="1.9.13-atlassian-1" />
     <property name="IMPL_VENDOR" value="http://fasterxml.com" />
 
     <patternset id="dist-all-source-files">
@@ -95,7 +95,7 @@
         <echo message = "6)  test - Run JUnit tests." />
         <echo message = "7)  dist - Create distribution directory and copy necessary files there" />
         <echo message = "8) all - Run clean, compile, test, javadoc," />
-        <echo message = "         and dist targets." />  
+        <echo message = "         and dist targets." />
         <echo message = "" />
         <echo message = "Available command-line arguments:" />
         <echo message = "---------------------------------" />
@@ -179,7 +179,7 @@ compile.smile, compile.mrbean" />
             <include name="org/codehaus/jackson/**/*.java" />
             <!-- mapper builds on core classes -->
             <classpath>
-               <pathelement path="${dir.build.classes.core}"/>  
+               <pathelement path="${dir.build.classes.core}"/>
                <!-- We support some ext libs (like Joda time) -->
                <fileset dir="${dir.lib}/ext">
                     <include name="*.jar" />
@@ -200,8 +200,8 @@ compile.smile, compile.mrbean" />
             <include name="org/codehaus/jackson/**/*.java" />
             <!-- builds on core and mapper classes -->
             <classpath>
-               <pathelement path="${dir.build.classes.core}"/>  
-               <pathelement path="${dir.build.classes.mapper}"/>  
+               <pathelement path="${dir.build.classes.core}"/>
+               <pathelement path="${dir.build.classes.mapper}"/>
                <!-- For JDK 1.5 build, need JAXB API -->
                <fileset dir="${dir.lib}/jaxb">
                     <include name="*.jar" />
@@ -226,8 +226,8 @@ compile.smile, compile.mrbean" />
                <fileset dir="${dir.lib}/jaxrs">
                     <include name="*.jar" />
                </fileset>
-               <pathelement path="${dir.build.classes.core}"/>  
-               <pathelement path="${dir.build.classes.mapper}"/>  
+               <pathelement path="${dir.build.classes.core}"/>
+               <pathelement path="${dir.build.classes.mapper}"/>
                <!-- this is optional dependency, but needed for compilation -->
                <pathelement path="${dir.build.classes.xc}"/>
             </classpath>
@@ -246,7 +246,7 @@ compile.smile, compile.mrbean" />
             <include name="org/codehaus/jackson/smile/**/*.java" />
             <!-- builds on core classes -->
             <classpath>
-               <pathelement path="${dir.build.classes.core}"/>  
+               <pathelement path="${dir.build.classes.core}"/>
             </classpath>
         </javac>
     	<!-- 1.6, [JACKSON-278]: need to copy VERSION info along (so unit tests see it) -->
@@ -263,8 +263,8 @@ compile.smile, compile.mrbean" />
             <include name="org/codehaus/jackson/mrbean/**/*.java" />
             <!-- builds on core and mapper classes -->
             <classpath>
-               <pathelement path="${dir.build.classes.core}"/>  
-               <pathelement path="${dir.build.classes.mapper}"/>  
+               <pathelement path="${dir.build.classes.core}"/>
+               <pathelement path="${dir.build.classes.mapper}"/>
                <fileset dir="${dir.lib}/repackaged">
                     <include name="jackson-asm*.jar" />
                </fileset>
@@ -286,8 +286,8 @@ compile.smile, compile.mrbean" />
             debug="true" includeantruntime="false"
         >
             <compilerarg value="-Xlint:unchecked" />
-            <src path="${dir.src.sample}" /> 
-            <src path="${dir.src.tools}" /> 
+            <src path="${dir.src.sample}" />
+            <src path="${dir.src.tools}" />
             <include name="**/*.java" />
             <!-- need core and mapper classes -->
             <classpath>
@@ -308,22 +308,22 @@ compile.smile, compile.mrbean" />
                <fileset dir="${dir.lib}/perf">
                     <include name="*.jar" />
                </fileset>
-               <pathelement path="${dir.build.classes.core}"/>  
-               <pathelement path="${dir.build.classes.mapper}"/>  
-               <pathelement path="${dir.build.classes.smile}"/>  
+               <pathelement path="${dir.build.classes.core}"/>
+               <pathelement path="${dir.build.classes.mapper}"/>
+               <pathelement path="${dir.build.classes.smile}"/>
                <pathelement path="${dir.build.classes.xc}"/>
             </classpath>
             <include name="perf/**/*.java" />
         </javac>
     </target>
 
-    <!-- Dummy target that just includes all individual jars... --> 
+    <!-- Dummy target that just includes all individual jars... -->
     <target name="jars" depends="jars.asl, jars.lgpl, jars.other, jar.all, jars.tools, jar.mini" />
 
     <target name="javadoc" depends="compile.all">
         <!-- Build a dirpath that contains just the "source" tree -->
         <javadoc windowtitle="Jackson JSON Processor"
-            destdir="${dir.javadoc}" 
+            destdir="${dir.javadoc}"
             author="true" version="true" use="true">
 
             <classpath>
@@ -353,7 +353,7 @@ compile.smile, compile.mrbean" />
             </packageset>
 
         	<!-- External JavaDocs to link: -->
-        	
+
             <!-- Joda time... -->
             <link href="http://joda-time.sourceforge.net/api-release" />
             <!-- Regular JDK 6 classes  -->
@@ -370,7 +370,7 @@ compile.smile, compile.mrbean" />
             <group title="Jackson Mr Bean" packages="org.codehaus.jackson.mrbean" />
             <group title="Jackson Smile Format" packages="org.codehaus.jackson.smile" />
         </javadoc>
-    </target> 
+    </target>
 
   <!-- New with 1.6, "jackson-all" combo jar -->
     <target name="jar.all" depends="jars.asl, jars.other">
@@ -399,7 +399,7 @@ compile.smile, compile.mrbean" />
 
     <!-- Generic distribution target builds the structure we copy over
          to the website.
-      --> 
+      -->
     <target name="dist" depends="compile.all,jars,javadoc"
     >
        <!-- First, let's copy the binary jars to dist -->

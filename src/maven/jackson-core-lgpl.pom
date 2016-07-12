@@ -14,8 +14,11 @@
  <!-- Contact information -->
 
   <url>http://jackson.codehaus.org</url>
+  <!-- modified by Atlassian -->
   <scm>
-    <url>http://xircles.codehaus.org/projects/jackson/repos/primary/repo</url>
+    <connection>scm:git:ssh://git@github.com:atlassian/jackson-1.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:atlassian/jackson-1.git</developerConnection>
+    <url>https://github.com/atlassian/jackson-1</url>
   </scm>
   <issueManagement>
     <url>http://jira.codehaus.org/browse/JACKSON</url>
@@ -29,7 +32,7 @@
   </developers>
 
  <!-- Dependency information -->
- 
+
   <dependencies>
     <!-- no dependencies, for now -->
   </dependencies>
