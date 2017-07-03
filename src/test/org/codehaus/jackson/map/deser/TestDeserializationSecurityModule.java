@@ -2,7 +2,6 @@ package org.codehaus.jackson.map.deser;
 
 
 import main.BaseTest;
-import org.apache.xalan.transformer.XalanProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -29,7 +28,7 @@ public class TestDeserializationSecurityModule extends BaseTest
 
     static class BeanWithMap
     {
-        public Map map = new HashMap<>();
+        public Map map = new HashMap();
     }
 
     static class BeanWithMapWithType

@@ -9,12 +9,6 @@ The repository already contains Ant scripts for deploying to Maven using the Ant
 and don't appear to work correctly with maven.atlassian.com. To get around this a deployment script has been created that
 uses Maven and the `deploy:deploy-file` Mojo directly.
 
-## Deploying to your local .m2 repo
-
-This still works using the Ant Maven build:
-
-* run `ant maven.local.deploy`
-
 ## Deploying to maven.atlassian.com
 
 * Set the `IMPL_VERSION` property in `build.xml` (eg. `<property name="IMPL_VERSION" value="1.9.13-atlassian-1" />`) 
