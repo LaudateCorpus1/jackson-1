@@ -11,6 +11,7 @@ syntax: glob
 target
 /build
 /dist
+/test
 
 # Eclipse
 .classpath
