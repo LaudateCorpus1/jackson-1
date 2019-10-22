@@ -89,6 +89,8 @@ public class SubTypeValidator
         s.add("ch.qos.logback.core.db.JNDIConnectionSource");
         // [databind#2410]: HikariCP/metricRegistry config
         s.add("com.zaxxer.hikari.HikariConfig");
+        // [databind#2420]: CXF/JAX-RS provider/XSLT
+        s.add("org.apache.cxf.jaxrs.provider.XSLTJaxbProvider");
 
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
