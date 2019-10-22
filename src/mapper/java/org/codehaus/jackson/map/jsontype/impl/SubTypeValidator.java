@@ -55,6 +55,8 @@ public class SubTypeValidator
         // [databind#1931]; more 3rd party
         s.add("com.mchange.v2.c3p0.ComboPooledDataSource");
         s.add("com.mchange.v2.c3p0.debug.AfterCloseLoggingComboPooledDataSource");
+        // [databind#2032]: more 3rd party; data exfiltration via xml parsed ext entities
+        s.add("org.apache.ibatis.parsing.XPathParser");
 
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
