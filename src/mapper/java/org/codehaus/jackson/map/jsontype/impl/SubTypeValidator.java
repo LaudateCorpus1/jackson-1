@@ -60,6 +60,9 @@ public class SubTypeValidator
         // [databind#2052]: ldap approaches; in all cases LDAP connection String is passed
         //   and access attempt is made:
         s.add("jodd.db.connection.DataSourceConnectionProvider");
+        // [databind#2058]: Oracle JDBC driver, with jndi/ldap lookup
+        s.add("oracle.jdbc.connector.OracleManagedConnectionFactory");
+        s.add("oracle.jdbc.rowset.OracleJDBCRowSet");
 
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
