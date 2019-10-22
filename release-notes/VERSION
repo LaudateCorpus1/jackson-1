@@ -35,6 +35,8 @@ One more patch release for 1.9.
 * [databind#2334]: Block class for CVE-2019-12384
 * [databind#2341]: Block class for CVE-2019-12814
 * [databind#2387]: Block yet another deserialization gadget (EHCache, CVE-2019-14379)
+* [databind#2389]: Block yet another deserialization gadget (CVE-2019-14439)
+ (reported by xiexq)
 
 1.9.13 (14-Jul-2013)
 
