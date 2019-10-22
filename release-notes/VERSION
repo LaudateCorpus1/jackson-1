@@ -22,6 +22,7 @@ One more patch release for 1.9.
 * [databind#1855]: Blacklist for more serialization gadgets (dbcp/tomcat, spring)
 * [databind#1931]: Two more `c3p0` gadgets to exploit default typing issue
 * [databind#2032]: Blacklist another serialization gadget (ibatis)
+* [databind#2052]: Block one more gadget type (jodd-db, CVE-2018-12022)
 
 1.9.13 (14-Jul-2013)
 
