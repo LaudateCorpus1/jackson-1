@@ -87,6 +87,8 @@ public class SubTypeValidator
         s.add("net.sf.ehcache.transaction.manager.DefaultTransactionManagerLookup");
         // [databind#2389]: logback/jndi
         s.add("ch.qos.logback.core.db.JNDIConnectionSource");
+        // [databind#2410]: HikariCP/metricRegistry config
+        s.add("com.zaxxer.hikari.HikariConfig");
 
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
