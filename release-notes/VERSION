@@ -20,6 +20,7 @@ One more patch release for 1.9.
 * [databind#1735]: Missing type checks when using polymorphic type ids
 * [databind#1737]: Block more JDK types from polymorphic deserialization [CVE 2017-15095]
 * [databind#1855]: Blacklist for more serialization gadgets (dbcp/tomcat, spring)
+* [databind#1931]: Two more `c3p0` gadgets to exploit default typing issue
 
 1.9.13 (14-Jul-2013)
 
