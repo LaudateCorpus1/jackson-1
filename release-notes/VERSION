@@ -33,6 +33,7 @@ One more patch release for 1.9.
  (reported by Guixiong Wu)
 * [databind#2326]: Block one more gadget type (CVE-2019-12086)
 * [databind#2334]: Block class for CVE-2019-12384
+* [databind#2341]: Block class for CVE-2019-12814
 
 1.9.13 (14-Jul-2013)
 
