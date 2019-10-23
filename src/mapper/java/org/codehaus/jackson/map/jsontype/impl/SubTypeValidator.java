@@ -94,6 +94,9 @@ public class SubTypeValidator
         s.add("com.zaxxer.hikari.HikariDataSource");
         // [databind#2420]: CXF/JAX-RS provider/XSLT
         s.add("org.apache.cxf.jaxrs.provider.XSLTJaxbProvider");
+        // [databind#2478]: comons-dbcp, p6spy
+        s.add("org.apache.commons.dbcp.datasources.SharedPoolDataSource");
+        s.add("com.p6spy.engine.spy.P6DataSource");
 
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
