@@ -97,6 +97,9 @@ public class SubTypeValidator
         // [databind#2478]: comons-dbcp, p6spy
         s.add("org.apache.commons.dbcp.datasources.SharedPoolDataSource");
         s.add("com.p6spy.engine.spy.P6DataSource");
+        // [databind#2498]: log4j-extras (1.2)
+        s.add("org.apache.log4j.receivers.db.DriverManagerConnectionSource");
+        s.add("org.apache.log4j.receivers.db.JNDIConnectionSource");
 
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
