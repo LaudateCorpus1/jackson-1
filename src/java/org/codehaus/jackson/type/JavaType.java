@@ -479,6 +479,11 @@ public abstract class JavaType
     /**********************************************************
      */
 
+    // since 1.9.14: needed by one of the patches
+    public final boolean isTypeOrSubTypeOf(Class<?> clz) {
+        return (_class == clz) || clz.isAssignableFrom(_class);
+    }
+
     protected void _assertSubclass(Class<?> subclass, Class<?> superClass)
     {
         if (!_class.isAssignableFrom(subclass)) {

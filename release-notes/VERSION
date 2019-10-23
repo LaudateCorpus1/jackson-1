@@ -1,9 +1,8 @@
 Version: 1.9.14
-Release date: xx-xxx-2013
+Release date: xx-xxx-2016
 
-One more patch release for 1.9...
+One more patch release for 1.9.
 
-[Issue#234]: Problems serializing types for deeply nested Maps.
 
 ------------------------------------------------------------------------
 === History: ===
@@ -11,8 +10,42 @@ One more patch release for 1.9...
 
 1.9.14 (not yet released)
 
-#1: JsonGenerator writeRawValue problem with surrogate UTF-8 characters
+#1: Set Secure Processing flag on DocumentBuilderFactory
+#4: JsonGenerator writeRawValue problem with surrogate UTF-8 characters
  (reported by Martin S)
+#5: Port deserialization security patch from jackson 2.x 
+* [databind#234]: Problems serializing types for deeply nested Maps.
+* [databind#1599]: Jackson Deserializer security vulnerability [CVE-2017-7525]
+* [databind#1680]: Blacklist couple more types for deserialization
+* [databind#1735]: Missing type checks when using polymorphic type ids
+* [databind#1737]: Block more JDK types from polymorphic deserialization [CVE 2017-15095]
+* [databind#1855]: Blacklist for more serialization gadgets (dbcp/tomcat, spring)
+* [databind#1931]: Two more `c3p0` gadgets to exploit default typing issue
+* [databind#2032]: Blacklist another serialization gadget (ibatis)
+* [databind#2052]: CVE-2018-12022: Block polymorphic deserialization of types from Jodd-db library
+* [databind#2058]: CVE-2018-12023: Block polymorphic deserialization of types from Oracle JDBC driver
+* [databind#1899]: Another two gadgets to exploit default typing issue in jackson-databind
+ (reported by OneSourceCat@github)
+* [databind#2097]: Block more classes from polymorphic deserialization (CVE-2018-14718 - CVE-2018-14721)
+ (reported by Guixiong Wu)
+* [databind#2186]: Block more classes from polymorphic deserialization (CVE-2018-19360,
+    CVE-2018-19361, CVE-2018-19362)
+ (reported by Guixiong Wu)
+* [databind#2326]: Block one more gadget type (CVE-2019-12086)
+* [databind#2334]: Block class for CVE-2019-12384
+* [databind#2341]: Block class for CVE-2019-12814
+* [databind#2387]: Block yet another deserialization gadget (EHCache, CVE-2019-14379)
+* [databind#2389]: Block yet another deserialization gadget (CVE-2019-14439)
+ (reported by xiexq)
+* [databind#2410]: Block one more gadget type (CVE-2019-14540)
+ (reported by iSafeBlue@github / blue@ixsec.org)
+* [databind#2420]: Block one more gadget type (no CVE allocated yet)
+ (reported by crazylirui@gmail.com)
+* [databind#2449]: Block one more gadget type (cve CVE-2019-14540)
+ (reported by Kaki K)
+* [databind#2460]: Block one mode gadget type (ehcache, CVE-2019-17267)
+* [databind#2478]: Block two more gadget types (commons-dbcp, p6spy)
+* [databind#2498]: Block one more gadget type (log4j-extras/1.2)
 
 1.9.13 (14-Jul-2013)
 

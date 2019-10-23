@@ -9,6 +9,7 @@ import org.codehaus.jackson.map.deser.impl.CreatorProperty;
 import org.codehaus.jackson.map.deser.std.StdKeyDeserializers;
 import org.codehaus.jackson.map.deser.std.ThrowableDeserializer;
 import org.codehaus.jackson.map.introspect.*;
+import org.codehaus.jackson.map.jsontype.impl.SubTypeValidator;
 import org.codehaus.jackson.map.type.*;
 import org.codehaus.jackson.map.util.ArrayBuilders;
 import org.codehaus.jackson.map.util.ClassUtil;
@@ -30,6 +31,38 @@ public class BeanDeserializerFactory
      * Signature of <b>Throwable.initCause</b> method.
      */
     private final static Class<?>[] INIT_CAUSE_PARAMS = new Class<?>[] { Throwable.class };
+
+    /**
+     * Set of well-known "nasty classes", deserialization of which is considered dangerous
+     * and should (and is) prevented by default.
+     *
+     * @since 1.9.13-atlassian-2
+     */
+    protected final static Set<String> DEFAULT_NO_DESER_CLASS_NAMES;
+
+    static
+    {
+        Set<String> s = new HashSet<String>();
+        // Courtesy of [https://github.com/kantega/notsoserial]:
+        // (and wrt [databind#1599]
+        s.add("org.apache.commons.collections.functors.InvokerTransformer");
+        s.add("org.apache.commons.collections.functors.InstantiateTransformer");
+        s.add("org.apache.commons.collections4.functors.InvokerTransformer");
+        s.add("org.apache.commons.collections4.functors.InstantiateTransformer");
+        s.add("org.codehaus.groovy.runtime.ConvertedClosure");
+        s.add("org.codehaus.groovy.runtime.MethodClosure");
+        s.add("org.springframework.beans.factory.ObjectFactory");
+        s.add("com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl");
+        s.add("org.apache.xalan.xsltc.trax.TemplatesImpl");
+        DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
+    }
+
+    /**
+     * Set of class names of types that are never to be deserialized.
+     *
+     * @since 1.9.13-atlassian-2
+     */
+    protected Set<String> _cfgIllegalClassNames = DEFAULT_NO_DESER_CLASS_NAMES;
 
     /*
     /**********************************************************
@@ -233,6 +266,12 @@ public class BeanDeserializerFactory
      * @since 1.7
      */
     protected final Config _factoryConfig;
+
+    /**
+     *
+     * @since 1.9.14
+     */
+    protected SubTypeValidator _subtypeValidator = SubTypeValidator.instance();
 
     @Deprecated
     public BeanDeserializerFactory() {
@@ -632,6 +671,7 @@ public class BeanDeserializerFactory
         if (!isPotentialBeanType(type.getRawClass())) {
             return null;
         }
+        checkIllegalTypes(type);
         // Use generic bean introspection to build deserializer
         return buildBeanDeserializer(config, type, beanDesc, property);
     }
@@ -1472,5 +1512,16 @@ public class BeanDeserializerFactory
             }
         }
         return status;
+    }
+
+    /**
+     * @since 1.9.14
+     */
+    protected void checkIllegalTypes(JavaType type) throws JsonMappingException
+    {
+        // There are certain nasty classes that could cause problems, mostly
+        // via default typing -- catch them here.
+        _subtypeValidator.validateSubType(type);
+        //throw new JsonMappingException("Illegal type (" + full + ") to deserialize: prevented for security reasons");
     }
 }
