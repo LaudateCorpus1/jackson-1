@@ -38,9 +38,11 @@ One more patch release for 1.9.
 * [databind#2389]: Block yet another deserialization gadget (CVE-2019-14439)
  (reported by xiexq)
 * [databind#2410]: Block one more gadget type (CVE-2019-14540)
-    (reported by iSafeBlue@github / blue@ixsec.org)
+ (reported by iSafeBlue@github / blue@ixsec.org)
 * [databind#2420]: Block one more gadget type (no CVE allocated yet)
-    (reported by crazylirui@gmail.com)
+ (reported by crazylirui@gmail.com)
+* [databind#2449]: Block one more gadget type (cve CVE-2019-14540)
+ (reported by Kaki K)
 
 1.9.13 (14-Jul-2013)
 
