@@ -43,6 +43,7 @@ One more patch release for 1.9.
  (reported by crazylirui@gmail.com)
 * [databind#2449]: Block one more gadget type (cve CVE-2019-14540)
  (reported by Kaki K)
+* [databind#2460]: Block one mode gadget type (ehcache, CVE-2019-17267)
 
 1.9.13 (14-Jul-2013)
 
