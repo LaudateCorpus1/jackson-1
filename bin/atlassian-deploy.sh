@@ -3,7 +3,7 @@ set -xe
 
 SCRIPT_DIR=${0%/*}
 DIST_DIR=$SCRIPT_DIR/../dist
-MAVEN_BASE_URL=https://maven.atlassian.com
+MAVEN_BASE_URL=https://packages.atlassian.com
 VERSION_FILE=$SCRIPT_DIR/../build/VERSION.txt
 
 if [ ! -f $VERSION_FILE ]; then
@@ -17,13 +17,13 @@ case $1 in
 "snapshot")
     POM_DIR=$SCRIPT_DIR/../build/snapshot
     SUFFIX="-SNAPSHOT"
-    MAVEN_URL=$MAVEN_BASE_URL/3rdparty-snapshot
+    MAVEN_URL=$MAVEN_BASE_URL/maven/3rdparty-snapshot
     MAVEN_REPO=atlassian-3rdparty-snapshot
     ;;
 "release")
     POM_DIR=$SCRIPT_DIR/../dist
     SUFFIX=
-    MAVEN_URL=$MAVEN_BASE_URL/3rdparty
+    MAVEN_URL=$MAVEN_BASE_URL/maven/3rdparty
     MAVEN_REPO=atlassian-3rdparty
     ;;
 *)
