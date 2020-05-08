@@ -49,6 +49,7 @@ One more patch release for 1.9.
 * [databind#2526]: Block two more gadget types (ehcache/JNDI - CVE-2019-20330)
 * [databind#2620]: Block one more gadget type (xbean-reflect/JNDI - CVE-2020-8840)
 * [databind#2631]: Block one more gadget type (shaded-hikari-config, CVE-2020-9546)
+* [databind#2634]: Block two more gadget types (ibatis-sqlmap, anteros-core; CVE-2020-9547 / CVE-2020-9548)
 
 1.9.13 (14-Jul-2013)
 
