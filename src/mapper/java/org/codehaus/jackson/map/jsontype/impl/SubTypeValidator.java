@@ -107,7 +107,10 @@ public class SubTypeValidator
 
         // [databind#2620]: xbean-reflect
         s.add("org.apache.xbean.propertyeditor.JndiConverter");
-        
+
+        // [databind#2631]: shaded hikari-config
+        s.add("org.apache.hadoop.shaded.com.zaxxer.hikari.HikariConfig");
+
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
 
