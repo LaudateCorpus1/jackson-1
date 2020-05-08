@@ -110,6 +110,7 @@ public class SubTypeValidator
         s.add("com.sun.org.apache.xalan.internal.lib.sql.JNDIConnectionPool");
 
         // [databind#2478]: comons-dbcp, p6spy
+        s.add("org.apache.commons.dbcp.datasources.PerUserPoolDataSource");
         s.add("org.apache.commons.dbcp.datasources.SharedPoolDataSource");
         s.add("com.p6spy.engine.spy.P6DataSource");
         // [databind#2498]: log4j-extras (1.2)
