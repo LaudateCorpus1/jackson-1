@@ -150,6 +150,9 @@ public class SubTypeValidator
         s.add("org.apache.activemq.jms.pool.XaPooledConnectionFactory"); // pool-jms
         s.add("org.apache.activemq.jms.pool.JcaPooledConnectionFactory");
 
+        // [databind#2666]: apache/commons-jms
+        s.add("org.apache.commons.proxy.provider.remoting.RmiProvider");
+
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
 
