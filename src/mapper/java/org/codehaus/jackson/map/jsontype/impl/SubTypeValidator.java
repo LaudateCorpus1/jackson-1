@@ -99,6 +99,11 @@ public class SubTypeValidator
         s.add("com.zaxxer.hikari.HikariDataSource");
         // [databind#2420]: CXF/JAX-RS provider/XSLT
         s.add("org.apache.cxf.jaxrs.provider.XSLTJaxbProvider");
+
+        // [databind#2462]: commons-configuration / -2
+        s.add("org.apache.commons.configuration.JNDIConfiguration");
+        s.add("org.apache.commons.configuration2.JNDIConfiguration");
+
         // [databind#2478]: comons-dbcp, p6spy
         s.add("org.apache.commons.dbcp.datasources.SharedPoolDataSource");
         s.add("com.p6spy.engine.spy.P6DataSource");
