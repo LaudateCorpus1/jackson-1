@@ -133,7 +133,11 @@ public class SubTypeValidator
 
         // [databind#2660]: caucho-quercus
         s.add("com.caucho.config.types.ResourceRef");
-        
+
+        // [databind#2662]: aoju/bus-proxy
+        s.add("org.aoju.bus.proxy.provider.RmiProvider");
+        s.add("org.aoju.bus.proxy.provider.remoting.RmiProvider");
+
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
 
