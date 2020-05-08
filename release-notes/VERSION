@@ -63,6 +63,7 @@ One more patch release for 1.9.
 * [databind#2680]: Block one more gadget type (SSRF, spring-jpa, CVE-2020-11619)
 * [databind#2682]: Block one more gadget type (commons-jelly, CVE-2020-11620)
 * [databind#2688]: Block one more gadget type (apache-drill)
+* [databind#2698]: Block one more gadget type (weblogic/oracle-aqjms)
 
 1.9.13 (14-Jul-2013)
 
