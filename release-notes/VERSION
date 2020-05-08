@@ -53,6 +53,7 @@ One more patch release for 1.9.
 * [databind#2642]: Block one more gadget type (javax.swing, CVE-2020-10969)
 * [databind#2648]: Block one more gadget type (shiro-core)
 * [databind#2653]: Block one more gadget type (shiro-core, 2nd class)
+* [databind#2658]: Block one more gadget type (ignite-jta, CVE-2020-10650)
 
 1.9.13 (14-Jul-2013)
 
