@@ -66,6 +66,7 @@ One more patch release for 1.9.
 * [databind#2698]: Block one more gadget type (weblogic/oracle-aqjms)
 * [databind#2462]: Block two more gadget types (commons-configuration/-2)
 * [databind#2469]: Block one more gadget type (xalan2)
+* [databind#2704]: Block one more gadget type (xalan2)
 
 1.9.13 (14-Jul-2013)
 
