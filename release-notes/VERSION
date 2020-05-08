@@ -46,6 +46,7 @@ One more patch release for 1.9.
 * [databind#2460]: Block one mode gadget type (ehcache, CVE-2019-17267)
 * [databind#2478]: Block two more gadget types (commons-dbcp, p6spy)
 * [databind#2498]: Block one more gadget type (log4j-extras/1.2)
+* [databind#2526]: Block two more gadget types (ehcache/JNDI - CVE-2019-20330)
 
 1.9.13 (14-Jul-2013)
 
