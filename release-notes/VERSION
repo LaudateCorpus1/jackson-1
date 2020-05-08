@@ -59,6 +59,7 @@ One more patch release for 1.9.
 * [databind#2662]: Block one more gadget type (bus-proxy, CVE-2020-10968)
 * [databind#2664]: Block one more gadget type (activemq-pool[-jms], CVE-2020-11111)
 * [databind#2666]: Block one more gadget type (apache/commons-proxy, CVE-2020-11112)
+* [databind#2670]: Block one more gadget type (openjpa, CVE-2020-11113)
 
 1.9.13 (14-Jul-2013)
 
