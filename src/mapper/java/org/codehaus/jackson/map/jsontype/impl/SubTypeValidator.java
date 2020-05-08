@@ -49,6 +49,10 @@ public class SubTypeValidator
         s.add("org.springframework.beans.factory.config.PropertyPathFactoryBean");
         s.add("com.mchange.v2.c3p0.JndiRefForwardingDataSource");
         s.add("com.mchange.v2.c3p0.WrapperConnectionPoolDataSource");
+        // [databind#2680]
+        s.add("org.springframework.aop.config.MethodLocatingFactoryBean");
+        s.add("org.springframework.beans.factory.config.BeanReferenceFactoryBean");
+
         // [databind#1855]: more 3rd party
         s.add("org.apache.tomcat.dbcp.dbcp2.BasicDataSource");
         s.add("com.sun.org.apache.bcel.internal.util.ClassLoader");

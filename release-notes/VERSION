@@ -60,6 +60,7 @@ One more patch release for 1.9.
 * [databind#2664]: Block one more gadget type (activemq-pool[-jms], CVE-2020-11111)
 * [databind#2666]: Block one more gadget type (apache/commons-proxy, CVE-2020-11112)
 * [databind#2670]: Block one more gadget type (openjpa, CVE-2020-11113)
+* [databind#2680]: Block one more gadget type (SSRF, spring-jpa, CVE-2020-11619)
 
 1.9.13 (14-Jul-2013)
 
