@@ -51,6 +51,7 @@ One more patch release for 1.9.
 * [databind#2631]: Block one more gadget type (shaded-hikari-config, CVE-2020-9546)
 * [databind#2634]: Block two more gadget types (ibatis-sqlmap, anteros-core; CVE-2020-9547 / CVE-2020-9548)
 * [databind#2642]: Block one more gadget type (javax.swing, CVE-2020-10969)
+* [databind#2648]: Block one more gadget type (shiro-core)
 
 1.9.13 (14-Jul-2013)
 
