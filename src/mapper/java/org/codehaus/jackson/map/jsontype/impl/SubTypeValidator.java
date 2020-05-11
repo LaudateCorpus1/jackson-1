@@ -49,6 +49,10 @@ public class SubTypeValidator
         s.add("org.springframework.beans.factory.config.PropertyPathFactoryBean");
         s.add("com.mchange.v2.c3p0.JndiRefForwardingDataSource");
         s.add("com.mchange.v2.c3p0.WrapperConnectionPoolDataSource");
+        // [databind#2680]
+        s.add("org.springframework.aop.config.MethodLocatingFactoryBean");
+        s.add("org.springframework.beans.factory.config.BeanReferenceFactoryBean");
+
         // [databind#1855]: more 3rd party
         s.add("org.apache.tomcat.dbcp.dbcp2.BasicDataSource");
         s.add("com.sun.org.apache.bcel.internal.util.ClassLoader");
@@ -71,10 +75,11 @@ public class SubTypeValidator
         s.add("flex.messaging.util.concurrent.AsynchBeansWorkManagerExecutor");
         s.add("com.sun.deploy.security.ruleset.DRSHelper");
         s.add("org.apache.axis2.jaxws.spi.handler.HandlerResolverImpl");
-        // [databind#2186]: yet more 3rd party gadgets
+        // [databind#2186], [databind#2670]: yet more 3rd party gadgets
         s.add("org.jboss.util.propertyeditor.DocumentEditor");
         s.add("org.apache.openjpa.ee.RegistryManagedRuntime");
         s.add("org.apache.openjpa.ee.JNDIManagedRuntime");
+        s.add("org.apache.openjpa.ee.WASRegistryManagedRuntime"); // [#2670] addition
         s.add("org.apache.axis2.transport.jms.JMSOutTransportInfo");
         // [databind#2326] (2.9.9): one more 3rd party gadget
         s.add("com.mysql.cj.jdbc.admin.MiniAdmin");
@@ -94,12 +99,90 @@ public class SubTypeValidator
         s.add("com.zaxxer.hikari.HikariDataSource");
         // [databind#2420]: CXF/JAX-RS provider/XSLT
         s.add("org.apache.cxf.jaxrs.provider.XSLTJaxbProvider");
+
+        // [databind#2462]: commons-configuration / -2
+        s.add("org.apache.commons.configuration.JNDIConfiguration");
+        s.add("org.apache.commons.configuration2.JNDIConfiguration");
+
+        // [databind#2469]: xalan
+        s.add("org.apache.xalan.lib.sql.JNDIConnectionPool");
+        // [databind#2704]: xalan2
+        s.add("com.sun.org.apache.xalan.internal.lib.sql.JNDIConnectionPool");
+
         // [databind#2478]: comons-dbcp, p6spy
+        s.add("org.apache.commons.dbcp.datasources.PerUserPoolDataSource");
         s.add("org.apache.commons.dbcp.datasources.SharedPoolDataSource");
         s.add("com.p6spy.engine.spy.P6DataSource");
         // [databind#2498]: log4j-extras (1.2)
         s.add("org.apache.log4j.receivers.db.DriverManagerConnectionSource");
         s.add("org.apache.log4j.receivers.db.JNDIConnectionSource");
+
+        // [databind#2526]: some more ehcachex
+        s.add("net.sf.ehcache.transaction.manager.selector.GenericJndiSelector");
+        s.add("net.sf.ehcache.transaction.manager.selector.GlassfishSelector");
+
+        // [databind#2620]: xbean-reflect
+        s.add("org.apache.xbean.propertyeditor.JndiConverter");
+
+        // [databind#2631]: shaded hikari-config
+        s.add("org.apache.hadoop.shaded.com.zaxxer.hikari.HikariConfig");
+
+        // [databind#2634]: ibatis-sqlmap, anteros-core
+        s.add("com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig");
+        s.add("br.com.anteros.dbcp.AnterosDBCPConfig");
+
+        // [databind#2642]: javax.swing (jdk)
+        s.add("javax.swing.JEditorPane");
+
+        // [databind#2648], [databind#2653]: shire-core
+        s.add("org.apache.shiro.realm.jndi.JndiRealmFactory");
+        s.add("org.apache.shiro.jndi.JndiObjectFactory");
+
+        // [databind#2658]: ignite-jta (, quartz-core)
+        s.add("org.apache.ignite.cache.jta.jndi.CacheJndiTmLookup");
+        s.add("org.apache.ignite.cache.jta.jndi.CacheJndiTmFactory");
+        s.add("org.quartz.utils.JNDIConnectionProvider");
+
+        // [databind#2659]: aries.transaction.jms
+        s.add("org.apache.aries.transaction.jms.internal.XaPooledConnectionFactory");
+        s.add("org.apache.aries.transaction.jms.RecoverablePooledConnectionFactory");
+
+        // [databind#2660]: caucho-quercus
+        s.add("com.caucho.config.types.ResourceRef");
+
+        // [databind#2662]: aoju/bus-proxy
+        s.add("org.aoju.bus.proxy.provider.RmiProvider");
+        s.add("org.aoju.bus.proxy.provider.remoting.RmiProvider");
+
+        // [databind#2664]: activemq-core, activemq-pool, activemq-pool-jms
+
+        s.add("org.apache.activemq.ActiveMQConnectionFactory"); // core
+        s.add("org.apache.activemq.ActiveMQXAConnectionFactory");
+        s.add("org.apache.activemq.spring.ActiveMQConnectionFactory");
+        s.add("org.apache.activemq.spring.ActiveMQXAConnectionFactory");
+        s.add("org.apache.activemq.pool.JcaPooledConnectionFactory"); // pool
+        s.add("org.apache.activemq.pool.PooledConnectionFactory");
+        s.add("org.apache.activemq.pool.XaPooledConnectionFactory");
+        s.add("org.apache.activemq.jms.pool.XaPooledConnectionFactory"); // pool-jms
+        s.add("org.apache.activemq.jms.pool.JcaPooledConnectionFactory");
+
+        // [databind#2666]: apache/commons-jms
+        s.add("org.apache.commons.proxy.provider.remoting.RmiProvider");
+
+        // [databind#2682]: commons-jelly
+        s.add("org.apache.commons.jelly.impl.Embedded");
+
+        // [databind#2688]: apache/drill
+        s.add("oadd.org.apache.xalan.lib.sql.JNDIConnectionPool");
+
+        // [databind#2698]: weblogic w/ oracle/aq-jms
+        // (note: dependency not available via Maven Central, but as part of
+        // weblogic installation, possibly fairly old version(s))
+        s.add("oracle.jms.AQjmsQueueConnectionFactory");
+        s.add("oracle.jms.AQjmsXATopicConnectionFactory");
+        s.add("oracle.jms.AQjmsTopicConnectionFactory");
+        s.add("oracle.jms.AQjmsXAQueueConnectionFactory");
+        s.add("oracle.jms.AQjmsXAConnectionFactory");
 
         DEFAULT_NO_DESER_CLASS_NAMES = Collections.unmodifiableSet(s);
     }
