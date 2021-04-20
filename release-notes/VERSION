@@ -67,6 +67,7 @@ One more patch release for 1.9.
 * [databind#2462]: Block two more gadget types (commons-configuration/-2, CVE-2019-14892)
 * [databind#2469]: Block one more gadget type (xalan2, might be related to CVE-2019-14893)
 * [databind#2704]: Block one more gadget type (xalan2, CVE-2020-14062)
+* [databind#2765]: Block one more gadget type (org.jsecurity, 2020-14195)
 
 1.9.13 (14-Jul-2013)
 
