@@ -77,6 +77,7 @@ One more patch release for 1.9.
 * [databind#2996]: Block 2 more gadget types (newrelic-agent, CVE-2020-36188/CVE-2020-36189)
 * [databind#2997]: Block 2 more gadget types (tomcat/naming-factory-dbcp, CVE-2020-36186/CVE-2020-36187)
 * [databind#2998]: Block 2 more gadget types (org.apache.tomcat/tomcat-dbcp, CVE-2020-36184/CVE-2020-36185)
+* [databind#2999]: Block one more gadget type (org.glassfish.web/javax.servlet.jsp.jstl, CVE-2020-35728)
 
 
 1.9.13 (14-Jul-2013)
