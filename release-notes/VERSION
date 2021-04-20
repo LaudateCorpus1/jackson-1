@@ -79,6 +79,7 @@ One more patch release for 1.9.
 * [databind#2998]: Block 2 more gadget types (org.apache.tomcat/tomcat-dbcp, CVE-2020-36184/CVE-2020-36185)
 * [databind#2999]: Block one more gadget type (org.glassfish.web/javax.servlet.jsp.jstl, CVE-2020-35728)
 * [databind#3003]: Block one more gadget type (org.docx4j.org.apache:xalan-interpretive, CVE-2020-36183)
+* [databind#3004]: Block some more DBCP-related potential gadget classes (CVE-2020-36179, CVE-2020-36180, CVE-2020-36181, CVE-2020-36182)
 
 
 1.9.13 (14-Jul-2013)
