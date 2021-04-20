@@ -73,6 +73,7 @@ One more patch release for 1.9.
 * [databind#2826]: Block one more gadget type (com.nqadmin.rowset, CVE-xxxx-xxx)
 * [databind#2827]: Block one more gadget type (org.arrahtec:profiler-core, CVE-xxxx-xxx)
 * [databind#2854]: Block one more gadget type (javax.swing, CVE-2021-20190)
+* [databind#2986]: Block 2 more gadget types (commons-dbcp2, CVE-2020-35490/CVE-2020-35491)
 
 
 1.9.13 (14-Jul-2013)
