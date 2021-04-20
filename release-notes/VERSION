@@ -62,11 +62,11 @@ One more patch release for 1.9.
 * [databind#2670]: Block one more gadget type (openjpa, CVE-2020-11113)
 * [databind#2680]: Block one more gadget type (SSRF, spring-jpa, CVE-2020-11619)
 * [databind#2682]: Block one more gadget type (commons-jelly, CVE-2020-11620)
-* [databind#2688]: Block one more gadget type (apache-drill)
-* [databind#2698]: Block one more gadget type (weblogic/oracle-aqjms)
-* [databind#2462]: Block two more gadget types (commons-configuration/-2)
-* [databind#2469]: Block one more gadget type (xalan2)
-* [databind#2704]: Block one more gadget type (xalan2)
+* [databind#2688]: Block one more gadget type (apache-drill, CVE-2020-14060)
+* [databind#2698]: Block one more gadget type (weblogic/oracle-aqjms, CVE-2020-14061)
+* [databind#2462]: Block two more gadget types (commons-configuration/-2, CVE-2019-14892)
+* [databind#2469]: Block one more gadget type (xalan2, might be related to CVE-2019-14893)
+* [databind#2704]: Block one more gadget type (xalan2, CVE-2020-14062)
 
 1.9.13 (14-Jul-2013)
 
