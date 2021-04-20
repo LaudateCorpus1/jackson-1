@@ -70,6 +70,8 @@ One more patch release for 1.9.
 * [databind#2765]: Block one more gadget type (org.jsecurity, CVE-2020-14195)
 * [databind#2798]: Block one more gadget type (com.pastdev.httpcomponents, CVE-2020-24750)
 * [databind#2814]: Block one more gadget type (Anteros-DBCP, CVE-2020-24616)
+* [databind#2826]: Block one more gadget type Block one more gadget type (com.nqadmin.rowset, CVE-xxxx-xxx)
+* [databind#2827]: Block one more gadget type Block one more gadget type (org.arrahtec:profiler-core, CVE-xxxx-xxx)
 
 
 1.9.13 (14-Jul-2013)
