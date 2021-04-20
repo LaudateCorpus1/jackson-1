@@ -75,6 +75,7 @@ One more patch release for 1.9.
 * [databind#2854]: Block one more gadget type (javax.swing, CVE-2021-20190)
 * [databind#2986]: Block 2 more gadget types (commons-dbcp2, CVE-2020-35490/CVE-2020-35491)
 * [databind#2996]: Block 2 more gadget types (newrelic-agent, CVE-2020-36188/CVE-2020-36189)
+* [databind#2997]: Block 2 more gadget types (tomcat/naming-factory-dbcp, CVE-2020-36186/CVE-2020-36187)
 
 
 1.9.13 (14-Jul-2013)
